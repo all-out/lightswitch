@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% for wormhole in wormholes  %}
+
+	<h2 class="text-center">{{ wormhole.name }}</h2>
+
+	{% for scout in scouts  %}
+		
+		{% if scout.location == wormhole %}
+
+			<p class="text-center">{{ scout.name }} <small>({{ scout.ship.name }})</small><p>
+			
+		{% endif %}
+
+	{% endfor %}
+
+{% endfor %}
+
+
+{% endblock body %}
